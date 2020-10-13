@@ -1,6 +1,5 @@
 import React from 'react';
-import Episodes from './Episodes';
-import App from '../App';
+import App from './App';
 import { render } from '@testing-library/react';
 
 // what tests need to be run?
