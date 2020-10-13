@@ -13,9 +13,7 @@ test("renders App without crashing",()=>{
 test("renders Episodes component without crashing",()=>{
     render(<Episodes />);
 });
-//this failed because dropdown is not initially selected
-//Episodes only renders after a season is selected
+//this failed because:
+//while loading ("show" state) app only returns a loading h2
+//rest of app jsx returns when render is complete and state is set
 
-//3. There is a dropdown on the page
-//4. The dropdown options contain "Season"
-//5. There are 4 options
