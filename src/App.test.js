@@ -9,9 +9,10 @@ test("renders App without crashing",()=>{
 });
 
 
-//3. There is a dropdown on the page
-// imported from react-dropdown
+//test the dropdown-----------------
 
+//A: there is a dropdown on the page
 
-//4. The dropdown options contain "Season"
-//5. There are 4 options
+//B: The dropdown options contain "Seasons"
+
+//C: There are 4 dropdown options
