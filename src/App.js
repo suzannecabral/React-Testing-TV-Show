@@ -53,3 +53,10 @@ export default function App() {
     </div>
   );
 }
+// Q&A notes----------------------------------
+//data type - test this
+//don't accidentally change
+//array vs obj
+//describe for yourself in describe and it.
+
+//mock the network call
