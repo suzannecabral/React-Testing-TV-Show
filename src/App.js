@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Dropdown from "react-dropdown";
 import parse from "html-react-parser";
 
 import { formatSeasons } from "./utils/formatSeasons";
+import { fetchShow } from "./api/fetchShow";
+
 
 import Episodes from "./components/Episodes";
 import "./styles.css";
@@ -15,17 +17,17 @@ export default function App() {
   const episodes = seasons[selectedSeason] || [];
 
   useEffect(() => {
-    const fetchShow = () => {
-      axios
-        .get(
-          "https://api.tvmaze.com/singlesearch/shows?q=stranger-things&embed=episodes"
-        )
+      fetchShow()
         .then(res => {
           setShow(res.data);
           setSeasons(formatSeasons(res.data._embedded.episodes));
-        });
-    };
-    fetchShow();
+        })
+        .catch(
+            (err) => {console.log("UseEffect error: ", err)
+            return err;
+          }
+
+        );
   }, []);
 
   const handleSelect = e => {
@@ -51,3 +53,10 @@ export default function App() {
     </div>
   );
 }
+// Q&A notes----------------------------------
+//data type - test this
+//don't accidentally change
+//array vs obj
+//describe for yourself in describe and it.
+
+//mock the network call
